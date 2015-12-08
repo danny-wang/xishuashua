@@ -27,5 +27,6 @@ password: password,
 password_confirmation:password}
     end
     assert_template'users/show'
+    assert_not flash[:success]==nil
   end
 end

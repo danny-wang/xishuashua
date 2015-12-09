@@ -13,11 +13,11 @@ class ActiveSupport::TestCase
   end
   # Add more helper methods to be used by all tests here...
   def log_in_as(user,options={})
-  password =options[:password] || '199395'
+  password =options[:password] || 'password'
   remember_me=options[:remember_me] || '1'
   if integration_test?
   post login_path,session:{email: user.email,
-        password: 199395,
+        password: password,
         remember_me: remember_me}
   else
   session[:user_id]=user.id

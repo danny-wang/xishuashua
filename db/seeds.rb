@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.delete_all
 User.create!(name: "Example User",
 email: "example@railstutorial.org",
 password: "foobar",
@@ -24,3 +25,20 @@ password_confirmation: password,
 activated: true,
 activated_at: Time.zone.now)
 end
+
+Product.delete_all
+Product.create!(title: '夹克衫',
+  description: '皮质、真丝及特殊面料不在服务范围内',
+  image_url:   'jacket.jpg',    
+  price: 12.00)
+# . . .
+Product.create!(title: '羽绒服套餐',
+  description: '皮质、真丝及特殊面料不在服务范围内',
+  image_url:   'weather.jpg',    
+  price: 88.00)
+  
+# . . .
+Product.create!(title: '西装套餐',
+  description: '皮质、真丝及特殊面料不在服务范围内',
+  image_url:   'suit_package.jpg',    
+  price: 38.00)

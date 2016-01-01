@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   def hello
     render text:"hello world"
   end
+  
   private
     def current_cart
       Cart.find(session[:cart_id])
@@ -16,4 +17,5 @@ class ApplicationController < ActionController::Base
      session[:cart_id]=cart.id
     cart
     end
+   
 end

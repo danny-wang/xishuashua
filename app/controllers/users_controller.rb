@@ -12,6 +12,9 @@ class UsersController < ApplicationController
   
   def show
     @user=User.find(params[:id])
+    #@orders=Order.find_by_email(@user.email).paginate(page: params[:page])
+    #@orders=find_order
+   
   end
   
   def create

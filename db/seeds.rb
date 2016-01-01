@@ -12,14 +12,16 @@ password: "foobar",
 password_confirmation: "foobar",
 admin: true,
 activated: true,
-activated_at: Time.zone.now)
+activated_at: Time.zone.now,
+account: 999999)
 
 User.create!(name: "danny",
 email: "137984495@qq.com",
 password: "123456",
 password_confirmation: "123456",
 activated: true,
-activated_at: Time.zone.now)
+activated_at: Time.zone.now,
+account: 999999)
 
 99.times do |n|
 name =Faker::Name.name
@@ -49,3 +51,28 @@ Product.create!(title: '西装套餐',
   description: '皮质、真丝及特殊面料不在服务范围内',
   image_url:   'suit_package.jpg',    
   price: 38.00)
+Product.create!(title: '风衣(长)',
+  description: '皮质、真丝及特殊面料不在服务范围内',
+  image_url:   'wind_coat.jpg',    
+  price: 28.00)
+Product.create!(title: '睡衣(套)',
+  description: '皮质、真丝及特殊面料不在服务范围内',
+  image_url:   'pajamas.jpg',    
+  price: 12.00)
+Product.create!(title: '牛仔裤',
+  description: '皮质、真丝及特殊面料不在服务范围内',
+  image_url:   'jean.jpg',    
+  price: 16.00)
+  
+Order.delete_all
+  (1..100).each do |i|
+    Order.create!(:name => "Customer #{i}", :address => "#{i} Main Street",
+      :email => "customer-#{i}@example.com", :pay_type => "Check")
+  end
+  
+  Order.create!(:name => "danny ", :address => "Main Street",
+      :email => "137984495@qq.com", :pay_type => "Check")
+  Order.create!(:name => "Customer ", :address => "Main Street",
+      :email => "137984495@qq.com", :pay_type => "Check")
+  Order.create!(:name => "Customer ", :address => " Main Street",
+      :email => "137984495@qq.com", :pay_type => "Check")

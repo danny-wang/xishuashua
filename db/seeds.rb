@@ -14,6 +14,13 @@ admin: true,
 activated: true,
 activated_at: Time.zone.now)
 
+User.create!(name: "danny",
+email: "137984495@qq.com",
+password: "123456",
+password_confirmation: "123456",
+activated: true,
+activated_at: Time.zone.now)
+
 99.times do |n|
 name =Faker::Name.name
 email="example-#{n+1}@railstutorial.org"

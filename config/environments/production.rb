@@ -79,7 +79,7 @@ Rails.application.configure do
   
   config.action_mailer.raise_delivery_errors=true
   config.action_mailer.delivery_method= :smtp
-  host='https://serene-taiga-7125.herokuapp.com'
+  host='https://xishuashua.herokuapp.com/'
   config.action_mailer.default_url_options={host:host}
   ActionMailer::Base.smtp_settings={
     :address => 'smtp.sendgrid.net',

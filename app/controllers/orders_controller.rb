@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     
-    @orders=Order.paginate(page: params[:page])
+  @orders=Order.paginate(page: params[:page])
   
   end
 

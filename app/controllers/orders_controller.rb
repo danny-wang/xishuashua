@@ -73,6 +73,10 @@ class OrdersController < ApplicationController
   # DELETE /orders/1.json
   def destroy
     @order.destroy
+    if !current_user.admin?
+       redirect_to current_user
+       return
+    end
     respond_to do |format|
       format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
       format.json { head :no_content }

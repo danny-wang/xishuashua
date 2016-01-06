@@ -1,16 +1,3 @@
-
-<!--<h1>ALL Products</h1>-->
-<!--<% @products.each do |product| %>-->
-<!--     <div class="entry">-->
-<!--          <%= image_tag(product.image_url) %>-->
-<!--          <h3><%= product.title %></h3>-->
-<!--          <%= sanitize(product.description) %>-->
-<!--          <div class="price_line">-->
-<!--               <span class="price"><%= number_to_currency(product.price) %></span>-->
-<!--               <%= link_to 'Add to Cart', line_items_path(product_id: product),  method: :post%>-->
-<!--          </div>-->
-<!--     </div>-->
-<!--<% end %>-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,17 +41,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			   <div class="wmuSliderWrapper">
 				<article style="position: absolute; width: 100%; opacity: 0;"> 
 				   	<div class="banner-wrap">
-				   	      <h2>洗刷刷 </h2>
-						  <h5>洗刷刷</h5>
-						  <p>洗刷刷<span>哦哦</span></p>				   		 
+				   	      <h2>心至纯，衣至净 </h2>
+						  <h5>衣服干干净净</h5>
+						  <h5>生活轻轻松松</h5>				   		 
 				   	 </div>
 					 
 			</article>
 			 <article style="position: absolute; width: 100%; opacity: 0;"> 
 				   	<div class="banner-wrap">
 					  		<h2>洗衣我最棒</h2>
-						  <h5>洗衣我最棒</h5>
-						  <p>洗衣我最棒<span>洗衣我最棒</span></p>
+					  		<h5>上门取件,专业配送,送货到家</h5>
+						   <h5>美丽心情，从“衣”开始<h5></p>
+
 				   		 
 				   	 </div>
 					 
@@ -73,8 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				   	<div class="banner-wrap">
 				   	       <h2>洗衣就找洗刷刷</h2>
 						  <h5>洗刷刷</h5>
-						  <p>Neque rutrum <span>enmos ligu sed lorbei</span></p>
-				   		 
+						  <h5>专注洗衣品牌20年</h5>
 				   	 </div>
 					 
 			</article>
@@ -127,7 +114,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-8 food-grid">
 				<div class="cup">
 
+
 					<% i = 0 %>
+
 				<% @products.each do |product| %>
 				  <% if i>5 then%>
 				 		<% break %>
@@ -138,7 +127,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<span class="dollar"><%= number_to_currency(product.price) %></span>
 						<div class="details-in">
 						<%= link_to '+洗衣篮', line_items_path(product_id: product) , :class => 'details', method: :post%>
+
 						 
+
 						</div>
 						<div class="clearfix"> </div>
 					</div>

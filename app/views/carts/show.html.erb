@@ -1,21 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>购物车</title>
 
 
+<%= stylesheet_link_tag 'orderstyle', 'data-turbolinks-track' => true %>
+ <%= javascript_include_tag 'demo', 'data-turbolinks-track' => true %> 
 
-<div class="cart_title">Your Cart</div>
-<table>
-  <% @cart.line_items.each do |item| %>
-     <tr>
-          <td><%= item.quantity %>&times;</td>
-          <td><%= item.product.title %></td>
-          <td class="item_price"><%= number_to_currency(item.total_price) %></td>
-          <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-     </tr>
-  <% end %>
-    <tr class="total_line">
-        <td colspan="2">Total</td>
-        <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
-    </tr>
-</table>
-<%= button_to "Checkout", new_order_path, :method => :get %>  
-<%= button_to 'Empty cart', @cart, method: :delete, 
-           data:{ confirm: 'Are you sure?' } %>
+
+</head>
+<body>
+
+<div class="catbox">
+
+	<table id="cartTable">
+		<thead>
+			<tr>
+				<th><label><input class="check-all check" type="checkbox"/>&nbsp;全选</label></th>
+				<th>商品</th>
+				<th>单价</th>
+				<th>数量</th>
+				<th>小计</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @cart.line_items.each do |item| %>
+			<tr>
+				<td class="checkbox1"><input class="check-one check" type="checkbox"/></td>
+				<td class="goods"><a href="#"><%= image_tag(item.product.image_url, class:"img-responsive") %></a><span><%= item.product.title %></span></td>
+				<td class="price"><%= number_to_currency(item.product.price) %></td>
+				<td class="count"><span class="reduce"></span><input class="count-input" type="text" value="1"/><span class="add">+</span></td>
+				<td class="subtotal"><%= number_to_currency(item.product.price) %></td>
+				<td class="operation"><span class="delete"><%= link_to '删除', item, method: :delete, data: { confirm: 'Are you sure?' } %></span></td>
+			</tr>
+			<% end %>						
+		</tbody>
+	</table>
+	
+	<div class="foot" id="foot">
+		<label class="fl select-all"><input type="checkbox" class="check-all check"/>&nbsp;全选</label>
+		<a class="fl delete" id="deleteAll" href="javascript:;"><%= link_to '删除', @cart, method: :delete %></a>
+		<div class="fr closing" style="background-color:#35a22c"><%= link_to '结算', new_order_path, :method => :get %>  </div>
+		<div class="fr total">合计：￥<span id="priceTotal"><%= number_to_currency(@cart.total_price) %></span></div>
+		<div class="fr selected" id="selected">已选商品&nbsp;<span id="selectedTotal">&nbsp;</span>件&nbsp&nbsp&nbsp<span class="arrow up">︽</span><span class="arrow down">︾</span></div>
+		<div class="selected-view">
+			<div id="selectedViewList" class="clearfix">
+				<div><img src="images/1.jpg"><span>取消选择</span></div>
+			</div>
+			<span class="arrow">◆<span>◆</span></span>
+		</div>
+	</div>
+
+</div>
+
+</body>
+</html>

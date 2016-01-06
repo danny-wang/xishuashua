@@ -11,6 +11,7 @@ font-size: 3em;
 letter-spacing: -2px;
 margin-bottom: 30px;
 text-align: center;
+font-family:'Lobster Two', cursive;
 }
 h2{
 font-size: 1.2em;
@@ -24,6 +25,7 @@ p{
 font-size: 1.1em;
 line-height: 1.7em;
 }
+
 html{
 overflow-y: scroll;
 }
@@ -133,9 +135,10 @@ margin-top: 15px;
 }
 
 /* forms */
+
 input,textarea,select,.uneditable-input{
 border: 1px solid #bbb;
-width: 100%;
+width: 40em;
 margin-bottom: 15px;
 @include box_sizing;
 }
@@ -143,7 +146,9 @@ input{
   height: auto !important;
   width: 40em;
 }
-
+input[type="checkbox"]{
+  width: 10em;
+}
 /*forms*/
 #error_explanation{
 color: red;
@@ -192,12 +197,12 @@ li{
   }
   
   .list_line_odd {
-    background: #f8b0f8;
+    background: #B0E1F8;
   }
   
   .list_image {
-    width: 60px;
-    height: 70px;
+    width: 80px;
+    height: 90px;
   }
   
   .list_description {
@@ -210,7 +215,7 @@ li{
     dt {
       color: #244;
       font-weight: bold;
-      font-size: larger;
+      font-size: x-large;
     }
     
     dd {
@@ -289,7 +294,7 @@ li{
 .depot_form label {
   width: 5em;
   float: left;
-  text-align: right;
+  text-align: left;
   padding-top: 0.2em;
   margin-right: 0.1em;
   display: block;
@@ -305,4 +310,55 @@ li{
 
 .depot_form div {
   margin: 0.5em 0;
+}
+table {
+  width: 100%;
+}
+p{
+
+}
+p strong{
+  font-size: 18px;
+  line-height: 30px;
+}
+p a{
+  font-size: 16px;
+  font-family: verdana, arial, helvetica, sans-serif;
+  color: #555;
+  margin:0 20%;
+}
+p bold{
+  font-size: 14px;
+  margin-left:3%;
+}
+.showproduct{
+  font-family: verdana, arial, helvetica, sans-serif;
+  color: #555;
+  margin-left:5%;
+  margin-right:5%;
+  margin-top:3%;
+  border-style:solid;
+  padding:9px 15px;
+  border-color:#B0E1F8;
+}
+form{
+  margin:0 10%;
+  padding:10px 10%;
+  color: #555;
+}
+
+.userlist{
+width:100%;
+}
+.userlist th{
+  border-bottom:2px solid #eeeeee ;
+  padding: 8px;
+  background-color: #178884;
+}
+.userlist td{
+  border-bottom:2px solid #eeeeee; 
+
+}
+.orderlist{
+width:60%;
 }

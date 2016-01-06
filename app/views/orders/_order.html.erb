@@ -1,13 +1,14 @@
-<li>
-<%= order.name%>
-<%= order.address%>
-<%= order.email%>
-<%= order.pay_type%>
+<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+    
+<td><%= order.name%></td>
+<td><%= order.address%></td>
+<td><%= order.email%></td>
+<td><%= order.pay_type%>
 |<%= link_to 'Show', order %>
 |<%= link_to 'Edit', edit_order_path(order) %>
-|<%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %>
+|<%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         
-</li>
+</tr>
 
 
 

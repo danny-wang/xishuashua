@@ -5,7 +5,7 @@ table{border-collapse:collapse;border-spacing:0;border:0;}
 body{color:#666;font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}
 clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
 .clearfix{display:inline-table}
-*html .clearfix{height:1%}
+*+html .clearfix{height:1%}
 .clearfix{display:block}
 *+html .clearfix{min-height:1%}
 .fl{float:left;}

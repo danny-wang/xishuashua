@@ -2,15 +2,22 @@
 
 <%provide(:title,'All orders')%>
 <h1>Listing orders</h1>
+<br/>
+<br/>
+<br />
 
+<%= link_to 'New Order', new_order_path, :class => 'details' %>
+<br/>
+<br/>
+<br/>
 <%=will_paginate%>
 
-<ul class="users">
+<table>
 
   <%= render @orders%>
 
-</ul>
+</table>
 
 <%=will_paginate%>
 </br>
-<%= link_to 'New Order', new_order_path %>
+

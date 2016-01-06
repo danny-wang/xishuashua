@@ -1,8 +1,8 @@
-<li>
-<%= gravatar_for user,size: 50%>
-<%= link_to user.name,user%>
-<%if current_user.admin? && !current_user?(user)%>
-|<%=link_to "delete",user,method: :delete,
-  data:{confirm: "You sure?"}%>
-<%end%>
-</li>
+<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+<td class="list_desctiption"  ><%= gravatar_for user,size: 72%></td>
+<td class="list_desctiption"><%= link_to user.name,user%></td>
+<td class="list_desctiption"><%if current_user.admin? && !current_user?(user)%>
+<%=link_to "删除",user,method: :delete,
+  data:{confirm: "确定要删除吗?"}%>
+<%end%></td>
+</tr>

@@ -1,12 +1,14 @@
 <%provide(:title,'All users')%>
-<h1>All users</h1>
+<h1 >Users Management</h1>
 
 <%=will_paginate%>
 
-<ul class="users">
-
+<table class="userlist">
+ <tr class="<%= cycle('list_line_odd', 'list_line_even') %>"><th style="width:40%" >头像</th><th style="width:50%">用户名</th><th>操作</th></tr>
   <%= render @users%>
+</table>
 
-</ul>
+
+
 
 <%=will_paginate%>

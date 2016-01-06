@@ -427,9 +427,6 @@ ul.number li i.mail{
 	float:left;
 	margin-bottom: 2em;
 }
-.cup-in:nth-child(3),.cup-in:nth-child(6){
-	margin-right:2%;
-}
 .cup-in img{
 	border-radius: 14px;
 	-webkit-border-radius: 14px;
@@ -456,7 +453,7 @@ ul.number li i.mail{
 	float:left;
 	margin-bottom: 2em;
 }
-.cup-in-3:nth-child(3),.cup-in:nth-child(6){
+.cup-in-3:nth-child(3n+0){
 	margin-right:0%;
 }
 .cup-in-3 img{
@@ -621,7 +618,7 @@ a.more{
     transform: rotateY(360deg);
 	-webkit-transform: rotateY(360deg);
 	-moz-transform: rotateY(360deg);
-	-o-transform: rotateY(360deg);
+	-otransform: rotateY(360deg);
 	-webkit-transition: 0.8s;
 	-moz-transition: 0.8s;
 	-o-transition: 0.8s;
@@ -1731,4 +1728,5 @@ ul.comment-list {
 }
 .single-men h5 {
 	font-size: 1.3em;
+}
 }

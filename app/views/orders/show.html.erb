@@ -1,25 +1,26 @@
 
-
+<div class="showproduct">
+  <br/>
 <p>
-  <strong>Name:</strong>
-  <%= @order.name %>
+  <strong>Name:</strong><br/><br/>
+  <bold><%= @order.name %></bold>
 </p>
-
+<br/>
 <p>
-  <strong>Address:</strong>
-  <%= @order.address %>
+  <strong>Address:</strong><br/><br/>
+  <bold><%= @order.address %></bold>
 </p>
-
+<br/>
 <p>
-  <strong>Email:</strong>
-  <%= @order.email %>
+  <strong>Email:</strong><br/><br/>
+  <bold><%= @order.email %></bold>
 </p>
-
+<br/>
 <p>
-  <strong>Pay type:</strong>
-  <%= @order.pay_type %>
+  <strong>Pay type:</strong><br/><br/>
+  <bold><%= @order.pay_type %></bold>
 </p>
-
+<br/>
 <div class="cart_title">订单内容</div>
 
 <table>
@@ -35,8 +36,12 @@
         <td class="total_cell"><%= number_to_currency(@order.total_price) %></td>
     </tr>
 </table>
-
+<br/>
+<p>
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%if current_user.admin? %>
 <%= link_to 'Back', orders_path %>
 <% end %>
+</p>
+<br/>
+</div>

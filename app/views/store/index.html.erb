@@ -1,0 +1,195 @@
+
+<!--<h1>ALL Products</h1>-->
+<!--<% @products.each do |product| %>-->
+<!--     <div class="entry">-->
+<!--          <%= image_tag(product.image_url) %>-->
+<!--          <h3><%= product.title %></h3>-->
+<!--          <%= sanitize(product.description) %>-->
+<!--          <div class="price_line">-->
+<!--               <span class="price"><%= number_to_currency(product.price) %></span>-->
+<!--               <%= link_to 'Add to Cart', line_items_path(product_id: product),  method: :post%>-->
+<!--          </div>-->
+<!--     </div>-->
+<!--<% end %>-->
+<!DOCTYPE html>
+<html>
+<head>
+<html>
+<head>
+<title>Home</title>
+<%= stylesheet_link_tag    'bootstrap', media: 'all' %>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+<%= stylesheet_link_tag    'style', media: 'all' %>	
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Food shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--fonts-->
+<link href='http://fonts.useso.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.useso.com/css?family=Lobster+Two:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<!--//fonts-->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+				<script type="text/javascript">
+					jQuery(document).ready(function($) {
+						$(".scroll").click(function(event){		
+							event.preventDefault();
+							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+						});
+					});
+					</script>
+
+</head>
+<body>
+
+	<div class="banner">
+		<div class="banner-in">
+		<!---->
+		<div class="wmuSlider example1">
+			   <div class="wmuSliderWrapper">
+				<article style="position: absolute; width: 100%; opacity: 0;"> 
+				   	<div class="banner-wrap">
+				   	      <h2>洗刷刷 </h2>
+						  <h5>洗刷刷</h5>
+						  <p>洗刷刷<span>哦哦</span></p>				   		 
+				   	 </div>
+					 
+			</article>
+			 <article style="position: absolute; width: 100%; opacity: 0;"> 
+				   	<div class="banner-wrap">
+					  		<h2>洗衣我最棒</h2>
+						  <h5>洗衣我最棒</h5>
+						  <p>洗衣我最棒<span>洗衣我最棒</span></p>
+				   		 
+				   	 </div>
+					 
+			</article>
+			 <article style="position: absolute; width: 100%; opacity: 0;"> 
+				   	<div class="banner-wrap">
+				   	       <h2>洗衣就找洗刷刷</h2>
+						  <h5>洗刷刷</h5>
+						  <p>Neque rutrum <span>enmos ligu sed lorbei</span></p>
+				   		 
+				   	 </div>
+					 
+			</article>
+			</div>
+		</div>
+		<!---->
+		<%= javascript_include_tag 'wmuSlider.js' %>
+		  <!--<script src="js/jquery.wmuSlider.js"></script> -->
+			  <script>
+       			$('.example1').wmuSlider({
+					 pagination : false,
+				});         
+   		     </script> 	
+		<!---->
+	</div>
+	</div>
+	<!---->
+	<div class="content">
+		<div class="container">
+		<div class="content-grid">
+			<div class="col-md-4 grid-food">
+				<div class="popular">
+				<h3>所有商品类目</h3>
+				<p> 囊括各类衣物、家居用品等几十种类目供你选择</p>
+				<ul class="popular-in">
+					<li><i> </i><%=link_to "服装干洗",store_index_all_path(:anchor=> "clothing") %></li>
+					<li><i> </i><%=link_to "皮具干洗",store_index_all_path(:anchor=> "piju")  %></li>
+					<li><i> </i><%=link_to "家具干洗",store_index_all_path(:anchor=> "jiaju")  %></li>
+					<li><i> </i><%=link_to "其他",store_index_all_path(:anchor=> "clothing")  %></li>							
+				</ul>
+				</div>
+				<div class="popular phone">
+					<h3>服务咨询</h3>
+					<p>如有任何问题或特殊配送需求请提前咨询免费客服热线（工作时间 8：30～20：30）</p>
+					<ul class="number">
+						<li><span><i> </i>(000) 888 88888</span ></li>
+						<li><a href="mailto:info@sitename.com"><i class="mail"> </i>12345678@qq.com </a></li>					
+					</ul>
+				</div>
+				<div class="popular">
+					<h3>我要吐槽</h3>
+					<p>亲爱的顾客，在使用本服务时有遇到什么 问题吗！快来大胆吐槽吧</p>
+					<form>
+					<input type="text" value="请留下您宝贵的意见吧" onFocus="this.value='';" onBlur="if (this.value == '') {this.value = '请留下您宝贵的意见吧';}">
+					<input type="submit" value="提交" >
+					</form>
+				</div>
+			</div>
+			<!---->
+			<div class="col-md-8 food-grid">
+				<div class="cup">
+
+					
+				<% @products.each do |product| %>
+					<div class="col-md-4 cup-in-3">
+						<a href="#"><%= image_tag(product.image_url, class:"img-responsive") %></a>
+						<p><%= product.title %></p>
+						<span class="dollar"><%= number_to_currency(product.price) %></span>
+						<div class="details-in">
+						<%= link_to '+洗衣篮', line_items_path(product_id: product) , :class => 'details', method: :post%>
+						  <%= link_to 'Add to Cart', line_items_path(product_id: product),  method: :post%>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				<% end %>
+
+					<div class="clearfix"> </div>
+				</div>
+				<!---->
+					<div class="browse">
+						<p class="vit">点击查看更多还有更多惊喜等着你哦～ </p>
+						<!--<a href="single.html" class="more">查看更多</a>-->
+						<%=link_to "查看更多",store_index_all_path, :class => 'more' %>
+						<div class="clearfix"> </div>
+						<div class="arrow">
+							<a href="#"><%= image_tag("arrow.png") %></a>
+						</div>
+					</div>
+				<!---->
+				<div class="content-sit">
+					<div class="col-md-6 amet">
+						<h3>洗衣流程</h3>
+						<p>您的每件衣物都会按照国际标准的洗涤流程来操作</p>
+						<div class="egg">
+							<a href="single.html"><%= image_tag("pic.png" ,class:"img-responsive") %></a>
+						</div>
+						<p class="para-in"> 登录或注册——挑选洗涤——加入干洗篮——确认下单——签收评论 </p>
+					</div>
+					<div class="col-md-6 amet-in">
+						<h3>配送说明</h3>
+						<p>如有特殊配送要求请在下单前联系我们</p>
+						<div class="amet-grid">
+							<div class="now"><span>&nbsp;第</span>&nbsp;一</div>
+							<p class="sed"><span>上门取件</span> <span>下单时请填写详细收货地址和联系电话。</span> <span>系统会默认为您选择离您最近的快递站点，为您上门取件</span></p>
+						<div class="clearfix"> </div>
+						</div>
+						<div class="amet-grid">
+							<div class="now"><span>&nbsp;第</span>&nbsp;二</div>
+							<p class="sed"><span>包装方式</span> <span>提供折叠配送和悬挂配送两种包装方式</span> <span>消费者下单时可自行选择配送方式</span></p>
+						<div class="clearfix"> </div>
+						</div>
+						<div class="amet-grid">
+							<div class="now"><span>&nbsp;第</span>&nbsp;三</div>
+							<p class="sed"><span>验货签收</span> <span>请您签收服务产品时，尽量在服务人员在场时当面检查服务产品。</span> <span>如果服务人员坚持先签收再检查，建议您在签收之后立即检查</span></p>
+						<div class="clearfix"> </div>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+		</div>
+	</div>
+	
+
+</body>
+</html>

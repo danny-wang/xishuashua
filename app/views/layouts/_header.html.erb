@@ -1,0 +1,68 @@
+	<header class="header-in">
+		<div class="container">
+			<div class="logo">
+				<h1><%=link_to"BrushBrush", root_path%></h1>
+			</div>
+			<div class="header-top">
+				<div class="header-top-in">
+					<ul class="header-grid">
+						<% if logged_in?%>
+					  
+					  <li><%=link_to "用户信息",current_user%><label>/</label></li>
+				  	<li><%=link_to "设置",edit_user_path(current_user)%><label>/</label></li>
+				  	<% if current_user.admin? %>
+				  	<li><%=link_to  "用户管理",users_path%> <label>/</label></li>
+				  	<li><%=link_to  "商品管理",products_path%> <label>/</label></li>
+					  <li><%=link_to  "订单管理",orders_path%> </li>	
+				  	<% end %>	
+				  	
+				  	<% end %>
+					</ul>
+					<div class="act">    
+					<%=link_to"洗刷刷在线干洗", root_path, :class => 'done'%>
+						<!--<a href="#" class="done">洗刷刷干洗在线 </a>-->
+					</div>
+				<div class="clearfix"> </div>
+				</div>
+				<ul class="grid-header">
+					<li><%=link_to"洗衣篮",cart_path(current_cart)%><label>/</label></li>
+				  <% if logged_in? %>
+					<li><%=link_to"注销",logout_path,method:"delete"%></li>
+					<% else %>
+					<li><%=link_to"登陆",login_path%><label>/</label></li>
+					<li><%=link_to"注册",signup_path%></li>
+					<% end %>
+				</ul>
+				<div class="clearfix"> </div>
+			</div>
+			<!---->
+			<div class="header-bottom">
+				<div class="top-nav">
+					<span class="menu"> </span>
+					<ul>
+						<li><%=link_to"首页", root_path%><label>- </label> </li>
+						<li><%=link_to"帮助", help_path%><label>- </label></li>
+						<li><%=link_to"所有商品", store_index_all_path%><label>- </label></li>
+						
+						<li><a href="">联系我们</a></li>
+						
+					</ul>
+					<!--script-->
+				<script>
+					$("span.menu").click(function(){
+						$(".top-nav ul").slideToggle(500, function(){
+						});
+					});
+			</script>
+				</div>
+					<div class="search">
+						<form>
+							<input type="text" value="Search store here ..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
+							<input type="submit" value="">
+						</form>
+					</div>
+			<div class="clearfix"> </div>
+		</div>
+		
+		</div>
+	</header>

@@ -1,0 +1,13 @@
+<li>
+<%= order.name%>
+<%= order.address%>
+<%= order.email%>
+<%= order.pay_type%>
+|<%= link_to 'Show', order %>
+|<%= link_to 'Edit', edit_order_path(order) %>
+|<%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %>
+        
+</li>
+
+
+

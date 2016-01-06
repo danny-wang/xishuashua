@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+<%= stylesheet_link_tag    'bootstrap', media: 'all' %>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+<%= stylesheet_link_tag    'style', media: 'all' %>	
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Food shop Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--fonts-->
+<link href='http://fonts.useso.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.useso.com/css?family=Lobster+Two:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<!--//fonts-->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+					jQuery(document).ready(function($) {
+						$(".scroll").click(function(event){		
+							event.preventDefault();
+							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+						});
+					});
+					</script>
+
+</head>
+<body>
+
+	<!---->
+		<div class="container">
+			<div class="specials">
+			<h2><a name="clothing"></a>服装干洗</h2>
+				<div class="special-top">
+				<% @products=Product.where(:category =>'clothes').all%>
+				<% @products.each do |product| %>
+					<div class="col-md-4 cup-in">
+						<a href="#"><%= image_tag(product.image_url, class:"img-responsive") %></a>
+						<p><%= product.title %></p>
+						<span class="dollar"><%= number_to_currency(product.price) %></span>
+						<div class="details-in">
+						<%= link_to '+洗衣篮', line_items_path(product_id: product) , :class => 'details', method: :post%>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				<% end %>
+					<div class="clearfix"> </div>
+				</div>
+			</div>			
+			<div class="specials">
+			<h2><a name="piju"></a>皮具干洗</h2>
+				<div class="special-top">
+					<% @products=Product.where(:category =>'pizhi').all%>
+				<% @products.each do |product| %>
+					<div class="col-md-4 cup-in">
+						<a href="#"><%= image_tag(product.image_url, class:"img-responsive") %></a>
+						<p><%= product.title %></p>
+						<span class="dollar"><%= number_to_currency(product.price) %></span>
+						<div class="details-in">
+						<%= link_to '+洗衣篮', line_items_path(product_id: product) , :class => 'details', method: :post%>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				<% end %>
+					<div class="clearfix"> </div>
+				</div>
+			
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+						
+			<div class="specials">
+			<h2><a name="jiaju"></a>家居干洗</h2>
+				<div class="special-top">
+					<% @products=Product.where(:category =>'household').all%>
+				<% @products.each do |product| %>
+					<div class="col-md-4 cup-in">
+						<a href="#"><%= image_tag(product.image_url, class:"img-responsive") %></a>
+						<p><%= product.title %></p>
+						<span class="dollar"><%= number_to_currency(product.price) %></span>
+						<div class="details-in">
+						<%= link_to '+洗衣篮', line_items_path(product_id: product) , :class => 'details', method: :post%>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+				<% end %>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="special-bottom">
+					<div class="col-md-6 bottom-special">						
+						<h5><a href="single.html">ALIQUAM CONGUE FERMENTU</a></h5>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
+						<a href="single.html" class="details">Details</a>
+					</div>
+					<div class="col-md-6 bottom-special-1">
+						<h5><a href="single.html">ALIQUAM CONGUE FERMENTU</a></h5>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
+						<a href="single.html" class="details">Details</a>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+	<!---->
+	
+</body>
+</html>

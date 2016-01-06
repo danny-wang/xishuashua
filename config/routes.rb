@@ -7,6 +7,9 @@ Rails.application.routes.draw do
 
   get 'store/index'
 
+  get 'store/index_all'
+
+
   resources :products
 
   get 'login'=>'sessions#new'

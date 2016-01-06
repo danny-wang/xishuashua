@@ -27,6 +27,7 @@ class LineItemsController < ApplicationController
     @cart = current_cart
     product = Product.find(params[:product_id])
     @line_item = @cart.add_product(product.id)
+<<<<<<< HEAD
 
     respond_to do |format|
       if @line_item.save
@@ -34,6 +35,17 @@ class LineItemsController < ApplicationController
           :notice => 'Line item was successfully created.') }
         format.xml  { render :xml => @line_item,
           :status => :created, :location => @line_item }
+=======
+  
+    respond_to do |format|
+      if @line_item.save
+          redirect_to  store_index_all_path
+          return
+        # format.html { redirect_to(@line_item.cart,
+        #   :notice => 'Line item was successfully created.') }
+        # format.xml  { render :xml => @line_item,
+        #   :status => :created, :location => @line_item }
+>>>>>>> origin/master
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @line_item.errors,

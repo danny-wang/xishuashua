@@ -31,7 +31,7 @@
 				<td class="checkbox1"><input class="check-one check" type="checkbox"/></td>
 				<td class="goods"><a href="#"><%= image_tag(item.product.image_url, class:"img-responsive") %></a><span><%= item.product.title %></span></td>
 				<td class="price"><%= number_to_currency(item.product.price) %></td>
-				<td class="count"><span class="reduce"></span><input class="count-input" type="text" value="1"/><span class="add">+</span></td>
+				<td class="count"><span class="reduce"></span><input class="count-input" type="text" value=<%=item.quantity%> /><span class="add">+</span></td>
 				<td class="subtotal"><%= number_to_currency(item.product.price) %></td>
 				<td class="operation"><span class="delete"><%= link_to '删除', item, method: :delete, data: { confirm: 'Are you sure?' } %></span></td>
 			</tr>

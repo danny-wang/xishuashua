@@ -118,7 +118,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<% i = 0 %>
 
 				<% @products.each do |product| %>
-				  <% if i>5 then%>
+				  <% if i>1 then%>
 				 		<% break %>
 				 	<% end %>
 					<div class="col-md-4 cup-in-3">
@@ -135,6 +135,47 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<% i = i + 1 %>
 				<% end %>
+				<% i = 0 %>
+       	<%@products=Product.where(:category =>'pizhi').all %>
+				<% @products.each do |product| %>
+				  <% if i>1 then%>
+				 		<% break %>
+				 	<% end %>
+					<div class="col-md-4 cup-in-3">
+						<a href="#"><%= image_tag(product.image_url, class:"img-responsive") %></a>
+						<p><%= product.title %></p>
+						<span class="dollar"><%= number_to_currency(product.price) %></span>
+						<div class="details-in">
+						<%= link_to '+洗衣篮', line_items_path(product_id: product) , :class => 'details', method: :post%>
+
+						 
+
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<% i = i + 1 %>
+				<% end %>
+				<% i = 0 %>
+      	<%@products=Product.where(:category =>'household').all %>
+				<% @products.each do |product| %>
+				  <% if i>1 then%>
+				 		<% break %>
+				 	<% end %>
+					<div class="col-md-4 cup-in-3">
+						<a href="#"><%= image_tag(product.image_url, class:"img-responsive") %></a>
+						<p><%= product.title %></p>
+						<span class="dollar"><%= number_to_currency(product.price) %></span>
+						<div class="details-in">
+						<%= link_to '+洗衣篮', line_items_path(product_id: product) , :class => 'details', method: :post%>
+
+						 
+
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<% i = i + 1 %>
+				<% end %>
+			
 
 					<div class="clearfix"> </div>
 				</div>

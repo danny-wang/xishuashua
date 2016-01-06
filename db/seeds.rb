@@ -5,10 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
 User.delete_all
 User.create!(name: "Example User",
 email: "example@railstutorial.org",
@@ -40,35 +37,6 @@ activated_at: Time.zone.now)
 end
 
 Product.delete_all
-<<<<<<< HEAD
-Product.create!(title: '夹克衫',
-  description: '皮质、真丝及特殊面料不在服务范围内',
-  image_url:   'jacket.jpg',    
-  price: 12.00)
-# . . .
-Product.create!(title: '羽绒服套餐',
-  description: '皮质、真丝及特殊面料不在服务范围内',
-  image_url:   'weather.jpg',    
-  price: 88.00)
-  
-# . . .
-Product.create!(title: '西装套餐',
-  description: '皮质、真丝及特殊面料不在服务范围内',
-  image_url:   'suit_package.jpg',    
-  price: 38.00)
-Product.create!(title: '风衣(长)',
-  description: '皮质、真丝及特殊面料不在服务范围内',
-  image_url:   'wind_coat.jpg',    
-  price: 28.00)
-Product.create!(title: '睡衣(套)',
-  description: '皮质、真丝及特殊面料不在服务范围内',
-  image_url:   'pajamas.jpg',    
-  price: 12.00)
-Product.create!(title: '牛仔裤',
-  description: '皮质、真丝及特殊面料不在服务范围内',
-  image_url:   'jean.jpg',    
-  price: 16.00)
-=======
 Product.create!(title: '棉服/羽绒服',
   description: '皮质、真丝及特殊面料不在服务范围内',
   image_url:   'pi10.jpg',  
@@ -225,7 +193,6 @@ Product.create!(title: '浴袍',
   price: 10.0)
   
   
->>>>>>> origin/master
   
 Order.delete_all
   (1..100).each do |i|

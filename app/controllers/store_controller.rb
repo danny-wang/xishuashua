@@ -1,9 +1,5 @@
 class StoreController < ApplicationController
   def index
-<<<<<<< HEAD
-    @products = Product.order(:title)
-  end
-=======
     # @products = Product.order(:title)
      @products=Product.where(:category =>'clothes').all
   end
@@ -11,5 +7,4 @@ class StoreController < ApplicationController
     @products = Product.order(:title)
   end
   
->>>>>>> origin/master
 end

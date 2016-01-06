@@ -14,15 +14,9 @@
     <%=content_tag(:div,message,class:"alert alert-#{message_type}")%>
   <%end%>
     <%=yield%>
-<<<<<<< HEAD
-    <%= render 'layouts/footer'%>
-    <%=debug(params)if Rails.env.development?%>
-</div>
-=======
     
     <%=debug(params)if Rails.env.development?%>
 </div>
 <%= render 'layouts/footer'%>
->>>>>>> origin/master
 </body>
 </html>

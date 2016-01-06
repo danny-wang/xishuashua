@@ -1,18 +1,4 @@
 
-<<<<<<< HEAD
-<h1>ALL Products</h1>
-<% @products.each do |product| %>
-     <div class="entry">
-          <%= image_tag(product.image_url) %>
-          <h3><%= product.title %></h3>
-          <%= sanitize(product.description) %>
-          <div class="price_line">
-               <span class="price"><%= number_to_currency(product.price) %></span>
-               <%= link_to 'Add to Cart', line_items_path(product_id: product),  method: :post%>
-          </div>
-     </div>
-<% end %>
-=======
 <!--<h1>ALL Products</h1>-->
 <!--<% @products.each do |product| %>-->
 <!--     <div class="entry">-->
@@ -141,18 +127,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="col-md-8 food-grid">
 				<div class="cup">
 
-					
+					<% i = 0 %>
 				<% @products.each do |product| %>
+				  <% if i>5 then%>
+				 		<% break %>
+				 	<% end %>
 					<div class="col-md-4 cup-in-3">
 						<a href="#"><%= image_tag(product.image_url, class:"img-responsive") %></a>
 						<p><%= product.title %></p>
 						<span class="dollar"><%= number_to_currency(product.price) %></span>
 						<div class="details-in">
 						<%= link_to '+洗衣篮', line_items_path(product_id: product) , :class => 'details', method: :post%>
-						  <%= link_to 'Add to Cart', line_items_path(product_id: product),  method: :post%>
+						 
 						</div>
 						<div class="clearfix"> </div>
 					</div>
+					<% i = i + 1 %>
 				<% end %>
 
 					<div class="clearfix"> </div>
@@ -207,4 +197,3 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </body>
 </html>
->>>>>>> origin/master

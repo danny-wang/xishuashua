@@ -20,8 +20,6 @@ module SessionsHelper
     end
     end
   end
-<<<<<<< HEAD
-=======
   def current_cart
       Cart.find(session[:cart_id])
     rescue ActiveRecord::RecordNotFound
@@ -29,7 +27,6 @@ module SessionsHelper
      session[:cart_id]=cart.id
     cart
   end
->>>>>>> origin/master
     
   def logged_in?
     !current_user.nil?

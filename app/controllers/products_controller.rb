@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-
+  before_action :logged_in_user, only: [:new,:show, :edit, :update, :destroy, :index]
   # GET /products
   # GET /products.json
   def index
@@ -71,4 +71,11 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:title, :description, :image_url, :price)
     end
+    def logged_in_user
+      unless current_user.admin?
+      flash[:danger] = "Please log in as admin."
+      redirect_to root_path
+      end
+    end
+  
 end

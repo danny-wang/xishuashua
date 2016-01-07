@@ -1,14 +1,13 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the xishuashuaApp 
+We have already deployed this server to heroku, please kindly visit our homepage:
+https://xishuashua.herokuapp.com/
 
-Things you may want to cover:
 
-This is the sample_app   
-As d demo for ruby on rails 
 * Ruby version
-
+ruby 2.2.1p85 (2015-02-26 revision 49769) [x86_64-linux]
+rails  '4.2.0'
 * System dependencies
 
 * Configuration
@@ -16,9 +15,10 @@ As d demo for ruby on rails
 * Database creation
 
 * Database initialization
-
+rake db:migrate
+rake db:seed
 * How to run the test suite
-
+rake test
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
